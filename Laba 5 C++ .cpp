@@ -9,12 +9,12 @@ private:
     int** matrix;
 
 public:
-    Lab(int raw, int col, int intArr) {  //Конструктор класса
+    Lab(int raw, int col, int intArr) {  //РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєР»Р°СЃСЃР°
 
         raws = raw;
         cols = col;
         intArray = intArr;
-        cout << "Инициализированна матрица " << raws << " на " << cols << endl;
+        cout << "РРЅРёС†РёР°Р»РёР·РёСЂРѕРІР°РЅРЅР° РјР°С‚СЂРёС†Р° " << raws << " РЅР° " << cols << endl;
         matrix = new int* [raws];
         for (int i = 0; i < raws; i++) {
             matrix[i] = new int[cols];
@@ -22,7 +22,7 @@ public:
     }
 
     void input() {
-        cout << "Введите элементы массива" << endl;
+        cout << "Р’РІРµРґРёС‚Рµ СЌР»РµРјРµРЅС‚С‹ РјР°СЃСЃРёРІР°" << endl;
         for (int i = 0; i < raws; i++) {
 
             for (int j = 0; j < cols; j++) {
@@ -35,7 +35,7 @@ public:
     }
 
     void output() {
-        cout << "Вывод элементов массива\n\n";
+        cout << "Р’С‹РІРѕРґ СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР°\n\n";
         for (int i = 0; i < raws; i++) {
 
             for (int j = 0; j < cols; j++) {
@@ -53,7 +53,7 @@ public:
             summ += matrix[i][col - 1];
         }
 
-        cout << "\nСумма элементов " << col << " столбца равна : " << summ << endl;
+        cout << "\nРЎСѓРјРјР° СЌР»РµРјРµРЅС‚РѕРІ " << col << " СЃС‚РѕР»Р±С†Р° СЂР°РІРЅР° : " << summ << endl;
     }
     int zero_counter() {
         int zeros = 0;
@@ -69,7 +69,7 @@ public:
     }
     void diagonal() {
 
-        cout << "Скаляр матрицы : " << raws * cols << endl;
+        cout << "РЎРєР°Р»СЏСЂ РјР°С‚СЂРёС†С‹ : " << raws * cols << endl;
 
         for (int i = 0; i < raws; i++) {
             matrix[i][i] = raws * cols;
@@ -85,7 +85,7 @@ public:
     }
     void indexator(int raw, int col) {
         if ((raw > raws) || (col > cols)) {
-            cout << "Такого элемента не существует" << endl;
+            cout << "РўР°РєРѕРіРѕ СЌР»РµРјРµРЅС‚Р° РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚" << endl;
         }
         else {
             cout << "Array[" << raw << "]" << "[" << col << "] = " << matrix[raw][col] << endl;
@@ -114,7 +114,7 @@ public:
     Lab  operator + (Lab right) {
         Lab temp(*this);
         if ((temp.raws != right.raws) || (temp.cols != right.cols)) {
-            cout << "Массивы разных размерностей!!" << endl;
+            cout << "РњР°СЃСЃРёРІС‹ СЂР°Р·РЅС‹С… СЂР°Р·РјРµСЂРЅРѕСЃС‚РµР№!!" << endl;
         }
         else {
             for (int i = 0; i < temp.raws; i++) {
@@ -136,21 +136,21 @@ int main()
     tasks.input();
     tasks.output();
     int zeros = tasks.zero_counter();
-    cout << "Количество нулей в матрице: " << zeros << endl;
+    cout << "РљРѕР»РёС‡РµСЃС‚РІРѕ РЅСѓР»РµР№ РІ РјР°С‚СЂРёС†Рµ: " << zeros << endl;
     tasks.diagonal();
     int raw, col;
-    cout << "К какому элементу вы хотите обратиться? Введите индексы: " << endl;
+    cout << "Рљ РєР°РєРѕРјСѓ СЌР»РµРјРµРЅС‚Сѓ РІС‹ С…РѕС‚РёС‚Рµ РѕР±СЂР°С‚РёС‚СЊСЃСЏ? Р’РІРµРґРёС‚Рµ РёРЅРґРµРєСЃС‹: " << endl;
     cin >> raw >> col;
     tasks.indexator(raw, col);
-    cout << "\n\nПерегрузка --" << endl;
+    cout << "\n\nРџРµСЂРµРіСЂСѓР·РєР° --" << endl;
     tasks--;
     tasks.output();
-    cout << "\n\nПерегрузка ++" << endl;
+    cout << "\n\nРџРµСЂРµРіСЂСѓР·РєР° ++" << endl;
     tasks++;
     tasks.output();
     Lab tasks1(2, 2, 15);
     tasks1.input();
-    cout << "\n\n Сложение массивов" << endl;
+    cout << "\n\n РЎР»РѕР¶РµРЅРёРµ РјР°СЃСЃРёРІРѕРІ" << endl;
     tasks = tasks + tasks1;
     tasks.output();
 }
