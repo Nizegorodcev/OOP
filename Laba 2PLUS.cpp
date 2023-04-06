@@ -4,10 +4,10 @@
 using namespace std;
 void task1() {
     int array[SIZE];
-    cout << "Массив будет заполнен случайными числами\n";
+    cout << "РњР°СЃСЃРёРІ Р±СѓРґРµС‚ Р·Р°РїРѕР»РЅРµРЅ СЃР»СѓС‡Р°Р№РЅС‹РјРё С‡РёСЃР»Р°РјРё\n";
     for (int i = 0; i < SIZE; i++) {
         array[i] = rand();
-        cout << "Элемент массива array[" << i << "] = " << array[i] << "\n";
+        cout << "Р­Р»РµРјРµРЅС‚ РјР°СЃСЃРёРІР° array[" << i << "] = " << array[i] << "\n";
     }
     int max = 0;
     for (int i = 0; i < SIZE; i++) {
@@ -15,13 +15,13 @@ void task1() {
             max = array[i];
         }
     }
-    cout << "Максимальный элемента массива равен :" << max << "\n";
+    cout << "РњР°РєСЃРёРјР°Р»СЊРЅС‹Р№ СЌР»РµРјРµРЅС‚Р° РјР°СЃСЃРёРІР° СЂР°РІРµРЅ :" << max << "\n";
     int sum = 0;
     for (int i = 1; i < SIZE; i++) {
         sum += array[i];
     }
-    cout << "Сумма элементов массива :" << sum << "\n";
-    cout << "Вывод ненулевых элемнтов в обратном порядке :";
+    cout << "РЎСѓРјРјР° СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР° :" << sum << "\n";
+    cout << "Р’С‹РІРѕРґ РЅРµРЅСѓР»РµРІС‹С… СЌР»РµРјРЅС‚РѕРІ РІ РѕР±СЂР°С‚РЅРѕРј РїРѕСЂСЏРґРєРµ :";
     for (int i = SIZE - 1; i >= 0; i--) {
         if (array[i] != 0) {
             cout << array[i] << " ";
@@ -31,15 +31,15 @@ void task1() {
 }
 void task2() {
     int array[5][6];
-    cout << "Ввод чисел с клавиатуры\n";
+    cout << "Р’РІРѕРґ С‡РёСЃРµР» СЃ РєР»Р°РІРёР°С‚СѓСЂС‹\n";
     for (int raw = 0; raw < 5; raw++) {
         for (int col = 0; col < 6; col++) {
-            cout << "Введите array[" << raw << "]" << "[" << col << "]\n";
+            cout << "Р’РІРµРґРёС‚Рµ array[" << raw << "]" << "[" << col << "]\n";
             cin >> array[raw][col];
-            //array[raw][col] = rand(); для автозаполнения
+            //array[raw][col] = rand(); РґР»СЏ Р°РІС‚РѕР·Р°РїРѕР»РЅРµРЅРёСЏ
         }
     }
-    cout << "Вывод массива\n";
+    cout << "Р’С‹РІРѕРґ РјР°СЃСЃРёРІР°\n";
     for (int raw = 0; raw < 5; raw++) {
         for (int col = 0; col < 6; col++) {
             cout << array[raw][col] << " ";
@@ -58,7 +58,7 @@ void task2() {
         }
         j = 0;
         maxes[i] = local_max;
-        cout << "\nМаксимум в " << i + 1 << " столбце : " << local_max;
+        cout << "\nРњР°РєСЃРёРјСѓРј РІ " << i + 1 << " СЃС‚РѕР»Р±С†Рµ : " << local_max;
     }
 }
 void sift_down(int* numbers, int root, int bottom)
@@ -105,11 +105,11 @@ void task3() {
     for (int i = 0; i < 10; i++) {
         array[i] = rand();
     }
-    cout << "Изначальный массив:\n";
+    cout << "РР·РЅР°С‡Р°Р»СЊРЅС‹Р№ РјР°СЃСЃРёРІ:\n";
     for (int i = 0; i < 10; i++) {
         cout << array[i] << " ";
     }
-    cout << "\nОтсортированный массив:\n";
+    cout << "\nРћС‚СЃРѕСЂС‚РёСЂРѕРІР°РЅРЅС‹Р№ РјР°СЃСЃРёРІ:\n";
     heap_sort(array, 10);
     for (int i = 0; i < 10; i++) {
         cout << array[i] << " ";
@@ -120,7 +120,7 @@ int main()
 {
     setlocale(LC_ALL, "rus");
     int choice;
-    cout << "Выберите задание для проверки:\n";
+    cout << "Р’С‹Р±РµСЂРёС‚Рµ Р·Р°РґР°РЅРёРµ РґР»СЏ РїСЂРѕРІРµСЂРєРё:\n";
     cin >> choice;
     switch (choice)
     {
@@ -134,5 +134,3 @@ int main()
     return 0;
 
 }
-
-
