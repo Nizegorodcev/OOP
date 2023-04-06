@@ -21,14 +21,14 @@ int main()
     z2();
 }
 void z1() {
-    cout << "\tÂâåäèòå ñòðîêó ñ ÷èñëàìè è quit äëÿ çàâåðøåíèÿ\n";
+    cout << "\tÐ’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÑÑ‚Ñ€Ð¾ÐºÑƒ Ñ Ñ‡Ð¸ÑÐ»Ð°Ð¼Ð¸ Ð¸ quit Ð´Ð»Ñ Ð·Ð°Ð²ÐµÑ€ÑˆÐµÐ½Ð¸Ñ\n";
     string s; int t = 0;
 
     while (1) {
         cout << ">> ";  cin >> s;
         for (int i = 0; i < s.length(); i++) {
             for (int j = 48; j <= 57; j++) {
-                if ((int)s[i] == j) cout << "Îáíàðóæåíî: " << s[i] << '\n';
+                if ((int)s[i] == j) cout << "ÐžÐ±Ð½Ð°Ñ€ÑƒÐ¶ÐµÐ½Ð¾: " << s[i] << '\n';
             }
             if ((int)s[i] == 113) t++;
             if ((int)s[i] == 117) t++;
@@ -42,7 +42,7 @@ void z2() {
     string text[30]; int len[30] = { 0 }; int minn = 999, maxx = 0, inn = 0, ixx = 0;
     std::string line;
 
-    std::ifstream in("text.txt"); // îêðûâàåì ôàéë äëÿ ÷òåíèÿ
+    std::ifstream in("text.txt"); // Ð¾ÐºÑ€Ñ‹Ð²Ð°ÐµÐ¼ Ñ„Ð°Ð¹Ð» Ð´Ð»Ñ Ñ‡Ñ‚ÐµÐ½Ð¸Ñ
     if (in.is_open())
     {
         int i = 0;
@@ -58,46 +58,46 @@ void z2() {
     }
     in.close();
 
-    std::ofstream out;          // ïîòîê äëÿ çàïèñè
-    out.open("text.txt");  // îêðûâàåì ôàéë äëÿ çàïèñè
+    std::ofstream out;          // Ð¿Ð¾Ñ‚Ð¾Ðº Ð´Ð»Ñ Ð·Ð°Ð¿Ð¸ÑÐ¸
+    out.open("text.txt");  // Ð¾ÐºÑ€Ñ‹Ð²Ð°ÐµÐ¼ Ñ„Ð°Ð¹Ð» Ð´Ð»Ñ Ð·Ð°Ð¿Ð¸ÑÐ¸
     if (out.is_open())
     {
         for (int i = 0; i < 30; i++) out << text[i] << "\n";
     }
 
-    std::cout << "Òåïåðü ïðîâåðü ôàéë)";
+    std::cout << "Ð¢ÐµÐ¿ÐµÑ€ÑŒ Ð¿Ñ€Ð¾Ð²ÐµÑ€ÑŒ Ñ„Ð°Ð¹Ð»)";
     out.close();
 }
 void z3() {
-    cout << "\tÇàïîëíèì äàííûå ïî ëþäÿì";
+    cout << "\tÐ—Ð°Ð¿Ð¾Ð»Ð½Ð¸Ð¼ Ð´Ð°Ð½Ð½Ñ‹Ðµ Ð¿Ð¾ Ð»ÑŽÐ´ÑÐ¼";
     ZNAK BOOK[N];
     for (int i = 0; i < N; i++) {
         cout << endl;
-        cout << "Ââåäèòå ôàìèëèþ è èìÿ: ";
+        cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ„Ð°Ð¼Ð¸Ð»Ð¸ÑŽ Ð¸ Ð¸Ð¼Ñ: ";
         cin >> BOOK[i].NAME[0] >> BOOK[i].NAME[1];
         //cout <<"\n" << BOOK[i].NAME[0] << BOOK[i].NAME[1];
-        cout << "Ââåäèòå äàòó ðîæäåíèÿ: ";
+        cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð´Ð°Ñ‚Ñƒ Ñ€Ð¾Ð¶Ð´ÐµÐ½Ð¸Ñ: ";
         cin >> BOOK[i].BDAY[0] >> BOOK[i].BDAY[1] >> BOOK[i].BDAY[2];
-        cout << "Ââåäèòå âðåìÿ: ";
+        cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð²Ñ€ÐµÐ¼Ñ: ";
         cin >> BOOK[i].TIME[0] >> BOOK[i].TIME[1];
-        cout << "Ââåäèòå çíàê çîäèàêà: "; cin >> BOOK[i].ZODIAK;
+        cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð·Ð½Ð°Ðº Ð·Ð¾Ð´Ð¸Ð°ÐºÐ°: "; cin >> BOOK[i].ZODIAK;
 
     }
     cout << endl; char yy = '+';
 
     while (1) {
-        cout << "\tÂûâåñòè äàííûå? (+)"; cin >> yy;
+        cout << "\tÐ’Ñ‹Ð²ÐµÑÑ‚Ð¸ Ð´Ð°Ð½Ð½Ñ‹Ðµ? (+)"; cin >> yy;
         if (yy == '+') {
-            cout << "\tÔàìèëèÿ? "; string nonn; cin >> nonn;
+            cout << "\tÐ¤Ð°Ð¼Ð¸Ð»Ð¸Ñ? "; string nonn; cin >> nonn;
             for (int i = 0; i < N; i++) {
                 if (nonn == BOOK[i].NAME[0]) {
-                    cout << "Çîâóò - " << BOOK[i].NAME[0] << " " << BOOK[i].NAME[1] << '\n';
-                    cout << "Ðîäèëñÿ - " << BOOK[i].BDAY[0] << "ãî ÷èñëà " << BOOK[i].BDAY[1] << "ãî ìåñÿöà â " << BOOK[i].BDAY[2] << "ì\n";
-                    cout << "Â " << BOOK[i].TIME[0] << ':' << BOOK[i].TIME[1] << " ïî ÌÑÊ\n";
-                    cout << BOOK[i].ZODIAK << " ïî çîäèàêó \n";
+                    cout << "Ð—Ð¾Ð²ÑƒÑ‚ - " << BOOK[i].NAME[0] << " " << BOOK[i].NAME[1] << '\n';
+                    cout << "Ð Ð¾Ð´Ð¸Ð»ÑÑ - " << BOOK[i].BDAY[0] << "Ð³Ð¾ Ñ‡Ð¸ÑÐ»Ð° " << BOOK[i].BDAY[1] << "Ð³Ð¾ Ð¼ÐµÑÑÑ†Ð° Ð² " << BOOK[i].BDAY[2] << "Ð¼\n";
+                    cout << "Ð’ " << BOOK[i].TIME[0] << ':' << BOOK[i].TIME[1] << " Ð¿Ð¾ ÐœÐ¡Ðš\n";
+                    cout << BOOK[i].ZODIAK << " Ð¿Ð¾ Ð·Ð¾Ð´Ð¸Ð°ÐºÑƒ \n";
                     break;
                 }
-                if (i == N - 1 && nonn != BOOK[i].NAME[0]) { cout << "Ìû òàêîãî íå çíàåì"; }
+                if (i == N - 1 && nonn != BOOK[i].NAME[0]) { cout << "ÐœÑ‹ Ñ‚Ð°ÐºÐ¾Ð³Ð¾ Ð½Ðµ Ð·Ð½Ð°ÐµÐ¼"; }
             }
         }
         else break;
