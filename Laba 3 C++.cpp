@@ -1,6 +1,6 @@
 #include <iostream>
 const unsigned int N = 6;
-// ğàçìåğ [4;16]!
+// Ñ€Ğ°Ğ·Ğ¼ĞµÑ€ [4;16]!
 using namespace std;
 int f_dump(int array[N][N]);
 int f_trans(int array[N][N]);
@@ -12,19 +12,19 @@ int main()
 	setlocale(0, "");
 	int array[N][N] = { 0 };
 	f_fill(array);
-	cout << "\tÈñõîäíàÿ ìàòğèöà ğàçìåğîì " << N << '*' << N << '\n';
+	cout << "\tĞ˜ÑÑ…Ğ¾Ğ´Ğ½Ğ°Ñ Ğ¼Ğ°Ñ‚Ñ€Ğ¸Ñ†Ğ° Ñ€Ğ°Ğ·Ğ¼ĞµÑ€Ğ¾Ğ¼ " << N << '*' << N << '\n';
 	f_dump(array);
-	cout << "\n\tÒĞÀÍÑ! ìàòğèöà ğàçìåğîì " << N << '*' << N << '\n';
+	cout << "\n\tĞ¢Ğ ĞĞĞ¡! Ğ¼Ğ°Ñ‚Ñ€Ğ¸Ñ†Ğ° Ñ€Ğ°Ğ·Ğ¼ĞµÑ€Ğ¾Ğ¼ " << N << '*' << N << '\n';
 	f_trans(array);
 	f_dump(array);
-	int** a = new int* [N]; //äèí.ìàñ
+	int** a = new int* [N]; //Ğ´Ğ¸Ğ½.Ğ¼Ğ°Ñ
 	for (int i = 0; i < N; i++) a[i] = new int[N];
 	for (int i = 0; i < N; i++) {
 		for (int j = 0; j < N; j++) {
 			a[i][j] = array[i][j];
 		}
 	}
-	cout << "\n\tÎïğåäåëèòåëü ìàòğèöû -> " << f_opred(a, N) << "\n";
+	cout << "\n\tĞĞ¿Ñ€ĞµĞ´ĞµĞ»Ğ¸Ñ‚ĞµĞ»ÑŒ Ğ¼Ğ°Ñ‚Ñ€Ğ¸Ñ†Ñ‹ -> " << f_opred(a, N) << "\n";
 
 }
 int f_dump(int arr[N][N]) {
@@ -89,12 +89,12 @@ double f_opred(int** a, int n) {
 	if (n == 2) return a[0][0] * a[1][1] - a[0][1] * a[1][0];
 	else {
 		double d = 0;
-		for (int k = 0; k < n; k++) {// äëÿ êàæäîé ñòğîêè
+		for (int k = 0; k < n; k++) {// Ğ´Ğ»Ñ ĞºĞ°Ğ¶Ğ´Ğ¾Ğ¹ ÑÑ‚Ñ€Ğ¾ĞºĞ¸
 			int** mas = new int* [n - 1];
 			for (int i = 0; i < n - 1; i++) {
 				mas[i] = new int[n - 1];
 			}
-			// ñîçäàåì íîâóş äèí.ìàòğèöó
+			// ÑĞ¾Ğ·Ğ´Ğ°ĞµĞ¼ Ğ½Ğ¾Ğ²ÑƒÑ Ğ´Ğ¸Ğ½.Ğ¼Ğ°Ñ‚Ñ€Ğ¸Ñ†Ñƒ
 			for (int i = 1; i < n; i++) {
 				int t = 0;
 				for (int j = 0; j < n; j++) {
@@ -103,14 +103,14 @@ double f_opred(int** a, int n) {
 					t++;
 				}
 			}
-			//çàïîëíÿåì èç äèí.êîïèè
+			//Ğ·Ğ°Ğ¿Ğ¾Ğ»Ğ½ÑĞµĞ¼ Ğ¸Ğ· Ğ´Ğ¸Ğ½.ĞºĞ¾Ğ¿Ğ¸Ğ¸
 			d += pow(-1, k + 2) * a[0][k] * f_opred(mas, n - 1);
-			f_clean(mas, n - 1); //î÷èñòêà èç-ïîä àëã. äîïîëíåíèÿ
+			f_clean(mas, n - 1); //Ğ¾Ñ‡Ğ¸ÑÑ‚ĞºĞ° Ğ¸Ğ·-Ğ¿Ğ¾Ğ´ Ğ°Ğ»Ğ³. Ğ´Ğ¾Ğ¿Ğ¾Ğ»Ğ½ĞµĞ½Ğ¸Ñ
 		}
 		return d;
 	}
 }
-void f_clean(int** a, int n) { //÷èñòêà â òåêóùåì äèí. ìàññèâå
+void f_clean(int** a, int n) { //Ñ‡Ğ¸ÑÑ‚ĞºĞ° Ğ² Ñ‚ĞµĞºÑƒÑ‰ĞµĞ¼ Ğ´Ğ¸Ğ½. Ğ¼Ğ°ÑÑĞ¸Ğ²Ğµ
 	for (int i = 0; i < n; i++) {
 		delete[] a[i];
 	}
