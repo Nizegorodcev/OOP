@@ -1,41 +1,24 @@
-#include<iostream>
-#include <string>
-#include<fstream>
-#include<Windows.h>
-#include<regex>
-using namespace std;
-void main()
-{
-	string path = "Myfile.txt";
-	SetConsoleCP(1251);
-	SetConsoleOutputCP(1251);
-	setlocale(LC_ALL, "RUS");
-	ifstream fin;
-	string x;
-	string newstr;
-	string str;
-	cmatch m;
-	cout << "Ïîïûòêà îòêðûòü ôàéë äëÿ ÷òåíèÿ!" << endl;
+	cout << "ÐŸÐ¾Ð¿Ñ‹Ñ‚ÐºÐ° Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚ÑŒ Ñ„Ð°Ð¹Ð» Ð´Ð»Ñ Ñ‡Ñ‚ÐµÐ½Ð¸Ñ!" << endl;
 	fin.open(path);
-	cout << "Ôàéë óñïåøíî îòêðûò." << endl;
+	cout << "Ð¤Ð°Ð¹Ð» ÑƒÑÐ¿ÐµÑˆÐ½Ð¾ Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚." << endl;
 	while (!fin.eof())
 	{
 		str = "";
 		getline(fin, str);
-
+		
 	}
-	newstr = regex_replace(str, regex("0"), "íîëü");
-	newstr = regex_replace(newstr, regex("1"), " îäèí ");
-	newstr = regex_replace(newstr, regex("2"), " äâà ");
-	newstr = regex_replace(newstr, regex("3"), " òðè ");
-	newstr = regex_replace(newstr, regex("4"), " ÷åòûðå ");
-	newstr = regex_replace(newstr, regex("5"), " ïÿòü ");
-	newstr = regex_replace(newstr, regex("6"), " øåñòü ");
-	newstr = regex_replace(newstr, regex("7"), " ñåìü ");
-	newstr = regex_replace(newstr, regex("8"), " âîñåìü ");
-	newstr = regex_replace(newstr, regex("9"), " äåâÿòü ");
+	newstr = regex_replace(str, regex("0"), "Ð½Ð¾Ð»ÑŒ");
+	newstr = regex_replace(newstr, regex("1"), " Ð¾Ð´Ð¸Ð½ ");
+	newstr = regex_replace(newstr, regex("2"), " Ð´Ð²Ð° ");
+	newstr = regex_replace(newstr, regex("3"), " Ñ‚Ñ€Ð¸ ");
+	newstr = regex_replace(newstr, regex("4"), " Ñ‡ÐµÑ‚Ñ‹Ñ€Ðµ ");
+	newstr = regex_replace(newstr, regex("5"), " Ð¿ÑÑ‚ÑŒ ");
+	newstr = regex_replace(newstr, regex("6"), " ÑˆÐµÑÑ‚ÑŒ ");
+	newstr = regex_replace(newstr, regex("7"), " ÑÐµÐ¼ÑŒ ");
+	newstr = regex_replace(newstr, regex("8"), " Ð²Ð¾ÑÐµÐ¼ÑŒ ");
+	newstr = regex_replace(newstr, regex("9"), " Ð´ÐµÐ²ÑÑ‚ÑŒ ");
 	cout << newstr;
 }
-
-
+		
+	
 
