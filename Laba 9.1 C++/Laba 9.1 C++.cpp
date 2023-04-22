@@ -1,3 +1,20 @@
+#include<iostream>
+#include <string>
+#include<fstream>
+#include<Windows.h>
+#include<regex>
+using namespace std;
+void main()
+{
+	string path = "Myfile.txt";
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+	setlocale(LC_ALL, "RUS");
+	ifstream fin;
+	string x;
+	string newstr;
+	string str;
+	cmatch m;
 	cout << "Попытка открыть файл для чтения!" << endl;
 	fin.open(path);
 	cout << "Файл успешно открыт." << endl;
@@ -5,7 +22,7 @@
 	{
 		str = "";
 		getline(fin, str);
-		
+
 	}
 	newstr = regex_replace(str, regex("0"), "ноль");
 	newstr = regex_replace(newstr, regex("1"), " один ");
@@ -19,6 +36,6 @@
 	newstr = regex_replace(newstr, regex("9"), " девять ");
 	cout << newstr;
 }
-		
-	
+
+
 
