@@ -20,7 +20,7 @@ std::string SystemStringToStdString(System::String^ str)
 
 }
 
-const char endStr[] = { 13,10,0 }; //конец строки для textBox1
+const char endStr[] = { 13,10,0 }; //РєРѕРЅРµС† СЃС‚СЂРѕРєРё РґР»СЏ textBox1
 namespace prilogenie {
 
 	using namespace System;
@@ -31,7 +31,7 @@ namespace prilogenie {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Сводка для MyForm
+	/// РЎРІРѕРґРєР° РґР»СЏ MyForm
 	/// </summary>
 	public ref class MyForm : public System::Windows::Forms::Form
 	{
@@ -40,13 +40,13 @@ namespace prilogenie {
 		{
 			InitializeComponent();
 			//
-			//TODO: добавьте код конструктора
+			//TODO: РґРѕР±Р°РІСЊС‚Рµ РєРѕРґ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°
 			//
 		}
 
 	protected:
 		/// <summary>
-		/// Освободить все используемые ресурсы.
+		/// РћСЃРІРѕР±РѕРґРёС‚СЊ РІСЃРµ РёСЃРїРѕР»СЊР·СѓРµРјС‹Рµ СЂРµСЃСѓСЂСЃС‹.
 		/// </summary>
 		~MyForm()
 		{
@@ -60,11 +60,11 @@ namespace prilogenie {
 
 	private: System::Windows::Forms::MenuStrip^ menuStrip1;
 	private: System::Windows::Forms::RichTextBox^ richTextBox1;
-	private: System::Windows::Forms::ToolStripMenuItem^ открытьToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ выходToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ РѕС‚РєСЂС‹С‚СЊToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ РІС‹С…РѕРґToolStripMenuItem;
 	private: System::Windows::Forms::MenuStrip^ menuStrip2;
 	private: System::Windows::Forms::OpenFileDialog^ openFileDialog1;
-	private: System::Windows::Forms::ToolStripMenuItem^ лабораторнаяРабота10ToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ Р»Р°Р±РѕСЂР°С‚РѕСЂРЅР°СЏР Р°Р±РѕС‚Р°10ToolStripMenuItem;
 
 
 
@@ -74,24 +74,24 @@ namespace prilogenie {
 
 	private:
 		/// <summary>
-		/// Обязательная переменная конструктора.
+		/// РћР±СЏР·Р°С‚РµР»СЊРЅР°СЏ РїРµСЂРµРјРµРЅРЅР°СЏ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°.
 		/// </summary>
 		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// Требуемый метод для поддержки конструктора — не изменяйте 
-		/// содержимое этого метода с помощью редактора кода.
+		/// РўСЂРµР±СѓРµРјС‹Р№ РјРµС‚РѕРґ РґР»СЏ РїРѕРґРґРµСЂР¶РєРё РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° вЂ” РЅРµ РёР·РјРµРЅСЏР№С‚Рµ 
+		/// СЃРѕРґРµСЂР¶РёРјРѕРµ СЌС‚РѕРіРѕ РјРµС‚РѕРґР° СЃ РїРѕРјРѕС‰СЊСЋ СЂРµРґР°РєС‚РѕСЂР° РєРѕРґР°.
 		/// </summary>
 		void InitializeComponent(void)
 		{
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
-			this->открытьToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->выходToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->РѕС‚РєСЂС‹С‚СЊToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->РІС‹С…РѕРґToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->richTextBox1 = (gcnew System::Windows::Forms::RichTextBox());
 			this->menuStrip2 = (gcnew System::Windows::Forms::MenuStrip());
 			this->openFileDialog1 = (gcnew System::Windows::Forms::OpenFileDialog());
-			this->лабораторнаяРабота10ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->Р»Р°Р±РѕСЂР°С‚РѕСЂРЅР°СЏР Р°Р±РѕС‚Р°10ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->menuStrip1->SuspendLayout();
 			this->menuStrip2->SuspendLayout();
 			this->SuspendLayout();
@@ -99,27 +99,27 @@ namespace prilogenie {
 			// menuStrip1
 			// 
 			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
-				this->открытьToolStripMenuItem,
-					this->выходToolStripMenuItem
+				this->РѕС‚РєСЂС‹С‚СЊToolStripMenuItem,
+					this->РІС‹С…РѕРґToolStripMenuItem
 			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 24);
 			this->menuStrip1->Name = L"menuStrip1";
 			this->menuStrip1->Size = System::Drawing::Size(928, 24);
 			this->menuStrip1->TabIndex = 1;
 			// 
-			// открытьToolStripMenuItem
+			// РѕС‚РєСЂС‹С‚СЊToolStripMenuItem
 			// 
-			this->открытьToolStripMenuItem->Name = L"открытьToolStripMenuItem";
-			this->открытьToolStripMenuItem->Size = System::Drawing::Size(66, 20);
-			this->открытьToolStripMenuItem->Text = L"Открыть";
-			this->открытьToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::открытьToolStripMenuItem_Click);
+			this->РѕС‚РєСЂС‹С‚СЊToolStripMenuItem->Name = L"РѕС‚РєСЂС‹С‚СЊToolStripMenuItem";
+			this->РѕС‚РєСЂС‹С‚СЊToolStripMenuItem->Size = System::Drawing::Size(66, 20);
+			this->РѕС‚РєСЂС‹С‚СЊToolStripMenuItem->Text = L"РћС‚РєСЂС‹С‚СЊ";
+			this->РѕС‚РєСЂС‹С‚СЊToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::РѕС‚РєСЂС‹С‚СЊToolStripMenuItem_Click);
 			// 
-			// выходToolStripMenuItem
+			// РІС‹С…РѕРґToolStripMenuItem
 			// 
-			this->выходToolStripMenuItem->Name = L"выходToolStripMenuItem";
-			this->выходToolStripMenuItem->Size = System::Drawing::Size(54, 20);
-			this->выходToolStripMenuItem->Text = L"Выход";
-			this->выходToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::выходToolStripMenuItem_Click);
+			this->РІС‹С…РѕРґToolStripMenuItem->Name = L"РІС‹С…РѕРґToolStripMenuItem";
+			this->РІС‹С…РѕРґToolStripMenuItem->Size = System::Drawing::Size(54, 20);
+			this->РІС‹С…РѕРґToolStripMenuItem->Text = L"Р’С‹С…РѕРґ";
+			this->РІС‹С…РѕРґToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::РІС‹С…РѕРґToolStripMenuItem_Click);
 			// 
 			// richTextBox1
 			// 
@@ -132,7 +132,7 @@ namespace prilogenie {
 			// 
 			// menuStrip2
 			// 
-			this->menuStrip2->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->лабораторнаяРабота10ToolStripMenuItem });
+			this->menuStrip2->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->Р»Р°Р±РѕСЂР°С‚РѕСЂРЅР°СЏР Р°Р±РѕС‚Р°10ToolStripMenuItem });
 			this->menuStrip2->Location = System::Drawing::Point(0, 0);
 			this->menuStrip2->Name = L"menuStrip2";
 			this->menuStrip2->Size = System::Drawing::Size(928, 24);
@@ -143,11 +143,11 @@ namespace prilogenie {
 			// 
 			this->openFileDialog1->FileName = L"openFileDialog1";
 			// 
-			// лабораторнаяРабота10ToolStripMenuItem
+			// Р»Р°Р±РѕСЂР°С‚РѕСЂРЅР°СЏР Р°Р±РѕС‚Р°10ToolStripMenuItem
 			// 
-			this->лабораторнаяРабота10ToolStripMenuItem->Name = L"лабораторнаяРабота10ToolStripMenuItem";
-			this->лабораторнаяРабота10ToolStripMenuItem->Size = System::Drawing::Size(167, 20);
-			this->лабораторнаяРабота10ToolStripMenuItem->Text = L"Лабораторная работа №10";
+			this->Р»Р°Р±РѕСЂР°С‚РѕСЂРЅР°СЏР Р°Р±РѕС‚Р°10ToolStripMenuItem->Name = L"Р»Р°Р±РѕСЂР°С‚РѕСЂРЅР°СЏР Р°Р±РѕС‚Р°10ToolStripMenuItem";
+			this->Р»Р°Р±РѕСЂР°С‚РѕСЂРЅР°СЏР Р°Р±РѕС‚Р°10ToolStripMenuItem->Size = System::Drawing::Size(167, 20);
+			this->Р»Р°Р±РѕСЂР°С‚РѕСЂРЅР°СЏР Р°Р±РѕС‚Р°10ToolStripMenuItem->Text = L"Р›Р°Р±РѕСЂР°С‚РѕСЂРЅР°СЏ СЂР°Р±РѕС‚Р° в„–10";
 			// 
 			// MyForm
 			// 
@@ -173,10 +173,10 @@ namespace prilogenie {
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e);
 	
 	private: System::Void richTextBox1_TextChanged(System::Object^ sender, System::EventArgs^ e);
-	private: System::Void выходToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void РІС‹С…РѕРґToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 		MyForm::Close();
 	}
-	private: System::Void открытьToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void РѕС‚РєСЂС‹С‚СЊToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
 
 
 		
