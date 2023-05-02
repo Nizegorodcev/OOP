@@ -12,32 +12,32 @@ void main(array<System::String^>^args)
 }
 System::Void prilogenie::MyForm::button1_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	richTextBox1->Text += L"Ïðèâåò ";
+	richTextBox1->Text += L"ÐŸÑ€Ð¸Ð²ÐµÑ‚ ";
 }
 
 System::Void prilogenie::MyForm::richTextBox1_TextChanged(System::Object^ sender, System::EventArgs^ e)
 {
 	return System::Void();
 }
-System::Void prilogenie::MyForm::îòêðûòüToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
+System::Void prilogenie::MyForm::Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚ÑŒToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	if (openFileDialog1->ShowDialog() != System::Windows::Forms::DialogResult::OK) return;
 
-	std::string fileName = SystemStringToStdString(openFileDialog1->FileName);// ïðåîáðàçîâàíèå ñòðîêè òèïà String^ â ñòàíäàðòíóþ ñòðîêó std::string
+	std::string fileName = SystemStringToStdString(openFileDialog1->FileName);// Ð¿Ñ€ÐµÐ¾Ð±Ñ€Ð°Ð·Ð¾Ð²Ð°Ð½Ð¸Ðµ ÑÑ‚Ñ€Ð¾ÐºÐ¸ Ñ‚Ð¸Ð¿Ð° String^ Ð² ÑÑ‚Ð°Ð½Ð´Ð°Ñ€Ñ‚Ð½ÑƒÑŽ ÑÑ‚Ñ€Ð¾ÐºÑƒ std::string
 
 	if (fileName.empty()) return;
 
 	std::ifstream in(fileName.c_str());
 
-	String^ systemEndStr = gcnew String(endStr);//Ñîçäàåì ñèìâîë êîíöà ñòðîêè
+	String^ systemEndStr = gcnew String(endStr);//Ð¡Ð¾Ð·Ð´Ð°ÐµÐ¼ ÑÐ¸Ð¼Ð²Ð¾Ð» ÐºÐ¾Ð½Ñ†Ð° ÑÑ‚Ñ€Ð¾ÐºÐ¸
 
-	while (!in.eof()) // ÷èòàåì èíôîðìàöèþ èç ôàéë ñòàíäàðòíûìè ñðåäñòâàìè ÿçûêà Ñ++
+	while (!in.eof()) // Ñ‡Ð¸Ñ‚Ð°ÐµÐ¼ Ð¸Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸ÑŽ Ð¸Ð· Ñ„Ð°Ð¹Ð» ÑÑ‚Ð°Ð½Ð´Ð°Ñ€Ñ‚Ð½Ñ‹Ð¼Ð¸ ÑÑ€ÐµÐ´ÑÑ‚Ð²Ð°Ð¼Ð¸ ÑÐ·Ñ‹ÐºÐ° Ð¡++
 
 	{
 		
 		std::string s;
 		getline(in, s);
-		String^ myInfoDisp = gcnew String(s.c_str());// ïðåîáðàçîâàíèå ñòàíäàðòíîé ñòðîêè std::string â ñòðîêó òèïà String^
+		String^ myInfoDisp = gcnew String(s.c_str());// Ð¿Ñ€ÐµÐ¾Ð±Ñ€Ð°Ð·Ð¾Ð²Ð°Ð½Ð¸Ðµ ÑÑ‚Ð°Ð½Ð´Ð°Ñ€Ñ‚Ð½Ð¾Ð¹ ÑÑ‚Ñ€Ð¾ÐºÐ¸ std::string Ð² ÑÑ‚Ñ€Ð¾ÐºÑƒ Ñ‚Ð¸Ð¿Ð° String^
 		richTextBox1->Text += (myInfoDisp + systemEndStr);
 
 	}
