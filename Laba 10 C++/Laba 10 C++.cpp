@@ -12,7 +12,7 @@ void readfile(string path)
 	lock_guard<mutex> lock(m);
 	ifstream fin;
 	string str;
-	cout << "×òåíèå, ID ïîòîêà: " << this_thread::get_id() << endl;
+	cout << "Ð§Ñ‚ÐµÐ½Ð¸Ðµ, ID Ð¿Ð¾Ñ‚Ð¾ÐºÐ°: " << this_thread::get_id() << endl;
 	fin.open(path);
 	for (int i = 0; i < 10; i++)
 	{
@@ -36,7 +36,7 @@ void writefile(string path)
 	lock_guard<mutex> lock(m);
 	ofstream fout;
 	fout.open(path);
-	cout<<"Çàïèñü, ID: " << this_thread::get_id() << endl;
+	cout<<"Ð—Ð°Ð¿Ð¸ÑÑŒ, ID: " << this_thread::get_id() << endl;
 	for (int i = 0; i < 10; i++)
 	{
 		if (fout.is_open())
@@ -58,37 +58,9 @@ void main()
 	thread th1(readfile,path);
 	thread th2(writefile,path);
 	this_thread::sleep_for(chrono::microseconds(1));
-	cout <<"Âûçâàíà main, ID: " << this_thread::get_id() << endl;
+	cout <<"Ð’Ñ‹Ð·Ð²Ð°Ð½Ð° main, ID: " << this_thread::get_id() << endl;
 	th1.join();
 	th2.join();
 	
 
 }
-//#include <iostream>
-//#include <thread>
-//#include <mutex>
-//#include <string>
-//#include <iterator>
-//#include <fstream>
-//using namespace std;
-//mutex m;
-//
-//void writefile(const string& s) {
-//    lock_guard<mutex> lock(m);
-//    ofstream ff(s);
-//    ff << rand()%10 << endl;
-//}
-//
-//void readfile(const string& s) {
-//    lock_guard<mutex> lock(m);
-//    ifstream ff(s);
-//    string ss{ istreambuf_iterator<char>(ff),istreambuf_iterator<char>() };
-//    cout << ss << endl;
-//}
-//
-//int main() {
-//    thread t1(writefile, string("Myfile.txt"));
-//    thread t2(readfile, string("Myfile.txt"));
-//    t1.join();
-//    t2.join();
-//}
