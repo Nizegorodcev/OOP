@@ -16,7 +16,7 @@ public:
 	}
 	void application(Driver* arr, int size)//Подача заявления на становление таксистом
 	{
-		cout << "Давайте заполним данные о вас " << endl;
+		cout << "\tДавайте заполним данные о вас: " << endl;
 		cout << "Введите ваше ФИО:" << endl;
 		cin >> arr[size].driver;
 		cout << "Укажите марку машины: " << endl;
@@ -27,14 +27,16 @@ public:
 		cin >> arr[size].registration_mark;
 		arr[size].setdriver(arr[size].driver, arr[size].marka, arr[size].colour, arr[size].registration_mark);
 	}
-	void getdriver(Driver* arr, int size)//Срабатывает при оформлении заказа
+	virtual int getdriver(Driver* arr, int size)//Срабатывает при оформлении заказа
 	{
 		int len = rand() % size;
 		cout << "К вам подьедет водитель: " << arr[len].driver << endl;
 		cout << "Марка машины: " << arr[len].marka << endl;
 		cout << "Цвет машины: " << arr[len].colour << endl;
 		cout<<"Регистрационный знак: "<<arr[len].registration_mark<<"\n" << endl;
+		return len;
 	}
+
 	
 };
 class client//Клиент
@@ -45,11 +47,12 @@ public:
 };
 class Taxi:public client,public Driver//Такси
 {
-private:
+
 	
-	int distance, price;//Расстояние,20 рублей за километр
+	
 	
 public:
+	int distance, price;//Расстояние,20 рублей за километр
 	
 	Taxi()
 	{
@@ -86,5 +89,11 @@ public:
 		cout << "Укажите то место куда вам надо: " << endl;
 		cin >> arr[size].where;
 	}
+	void getdriver(Taxi* arr, int size)
+	{
+		cout << "К вам подьедет водитель: " << arr[size].driver << endl;
+		cout << "Марка машины: " << arr[size].marka << endl;
+		cout << "Цвет машины: " << arr[size].colour << endl;
+		cout << "Регистрационный знак: " << arr[size].registration_mark << "\n" << endl;
+	}
 };
-
