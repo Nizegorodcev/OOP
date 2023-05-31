@@ -47,12 +47,10 @@ public:
 };
 class Taxi:public client,public Driver//Такси
 {
-
-	
-	
-	
+private:
+	int price;
 public:
-	int distance, price;//Расстояние,20 рублей за километр
+	int distance;//Расстояние,20 рублей за километр
 	
 	Taxi()
 	{
@@ -95,5 +93,9 @@ public:
 		cout << "Марка машины: " << arr[size].marka << endl;
 		cout << "Цвет машины: " << arr[size].colour << endl;
 		cout << "Регистрационный знак: " << arr[size].registration_mark << "\n" << endl;
+	}
+	void setprice(int price1,Taxi* arr, int  index)
+	{
+		arr[index].price = price1;
 	}
 };
