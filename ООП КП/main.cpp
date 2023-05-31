@@ -4,34 +4,23 @@
 #include<fstream>
 #include<iomanip>
 #include <algorithm>
-
-//Taxi* sort(Taxi* arr,int size) {
-//	Taxi* arr1 = new Taxi[1000];
-//	return arr1;
-//}
-int del(Taxi* arr, int size,int index) {
-	for (int i = index; i < size - 1; i++)
-	{
-		arr[i].client = arr[i + 1].client;
-		arr[i].where_from = arr[i + 1].where_from;
-		arr[i].where = arr[i + 1].where;
-		arr[i].driver = arr[i + 1].driver;
-		arr[i].colour = arr[i + 1].colour;
-		arr[i].marka = arr[i + 1].marka;
-		arr[i].registration_mark = arr[i + 1].registration_mark;
-		arr[i].distance = arr[i + 1].distance;
-		arr[i].price = arr[i + 1].price;
-	}
-	size--;
-	return size;
-}
-int comparator(string v1,string v2)
-{
-	if (v1.compare(v2) > 0) return 1;
-	else return -1;
-}
 void printmas(Taxi* arr, int size) {//Печать массива
+	int fiodr, otkyda, kyda, fiocl;
+	fiocl = 10;
+	otkyda = 17;
+	kyda = 12;
+	fiodr = 25;
+	string cl, ot, ky, dr;
+	cl = "ФИО клиента";
+	ot = "Откуда";
+	ky = "Куда";
+	dr = "ФИО водителя";
+	fiocl = 40 - cl.length();
+	otkyda = 40 - ot.length();
+	kyda = 40 - ky.length();
+	fiodr = 40 - dr.length();
 	cout << "_________________________________________________________________________________________________________________________________________________________________" << endl;
+	cout << "|" << cl << setw(fiocl) << "|" << ot << setw(otkyda) << "|" << ky << setw(kyda) << "|" << dr << setw(fiodr) << "|" << endl;
 	for (int i = 0; i < size; i++) {
 
 		cout << "|" << arr[i].client << setw(40 - arr[i].client.length()) << "|" << arr[i].where_from << setw(40 - arr[i].where_from.length()) << "|" << arr[i].where << setw(40 - arr[i].where.length()) << "|" << arr[i].driver << setw(40 - arr[i].driver.length()) << "|" << "\n";
@@ -52,8 +41,10 @@ int del(Taxi* arr,int size)//Удаление записи
 	otkyda = 40 - ot.length();
 	kyda = 40 - ky.length();
 	fiodr = 40 - dr.length();
-	cout << "__________________________________________________________________________________________________________________________________________________________________" << endl;
-	cout << " |" << cl << setw(fiocl) << "|" << ot << setw(otkyda) << "|" << ky << setw(kyda) << "|" << dr << setw(fiodr) << "|" << endl;
+	int price1, price2;
+	cout << "___________________________________________________________________________________________________________________________________________________________________" << endl;
+	cout << "  |" << cl << setw(fiocl) << "|" << ot << setw(otkyda) << "|" << ky << setw(kyda) << "|" << dr << setw(fiodr) << "|" << endl;
+	cout << "-------------------------------------------------------------------------------------------------------------------------------------------------------------------" << endl;
 	for (int i = 0; i < size; i++) {
 		
 		cout <<i<<" |" << arr[i].client << setw(40 - arr[i].client.length()) << "|" << arr[i].where_from << setw(40 - arr[i].where_from.length()) << "|" << arr[i].where << setw(40 - arr[i].where.length()) << "|" << arr[i].driver << setw(40 - arr[i].driver.length()) << "|" << "\n";
@@ -63,7 +54,7 @@ int del(Taxi* arr,int size)//Удаление записи
 	cin >> index;
 	if (index > size)
 	{
-		cout << "Такого элемента  не существует" << endl;
+		cout << "Такого элемента не существует" << endl;
 	}
 	else
 	{
@@ -78,7 +69,9 @@ int del(Taxi* arr,int size)//Удаление записи
 			arr[i].marka = arr[i + 1].marka;
 			arr[i].registration_mark = arr[i + 1].registration_mark;
 			arr[i].distance = arr[i + 1].distance;
-			arr[i].price = arr[i + 1].price;
+			price1 = arr[i].distance * 20;
+			price2 = arr[i + 1].distance * 20;
+			arr->setprice(price2, arr, i);
 		}
 		size--;
 		cout << "_________________________________________________________________________________________________________________________________________________________________" << endl;
@@ -214,7 +207,7 @@ void main()
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 	system("chcp 1251");
-
+	system("cls");
 	int len = 0;//Длина массива водителей
 	int len1 = 0;
 	int len2 = 0;//Для массива такси
@@ -245,10 +238,9 @@ void main()
 		cout << "2)Оформить заказ" << endl;
 		cout << "3)Поиск информации по ФИО водителя" << endl;
 		cout << "4)Считать и вывести данные с файла" << endl;
-		cout << "5)Записать данные массива в файл." << endl;//В разработке
+		cout << "5)Записать данные массива в файл." << endl;
 		cout << "6)Удаление записи массива" << endl;
 		cout << "7)Печать массива" << endl;
-		cout << "8)Сортировка массива" << endl;
 		cout << "0)Выход" << endl;
 		cin >> v;
 		switch (v)
@@ -272,7 +264,7 @@ void main()
 			searchDriver(a, len);
 			break;
 		case 4:
-			cout << "Введите название файла: "<<endl;
+			cout << "Введите название файла: " << endl;
 			cin >> path;
 			readfile(path);
 			path = "";
@@ -280,50 +272,22 @@ void main()
 		case 5:
 			cout << "Введите название файла в который вы хотите записать данные:" << endl;
 			cin >> path;
-			writefile(arr,path,len2);
+			writefile(arr, path, len2);
 
 			break;
 		case 6:
-			len2= del(arr, len2);
+			len2 = del(arr, len2);
 			break;
 		case 7:
 			printmas(arr, len2);
 			break;
-		case 8://Ищем минимальный элемент и записываем во 2 массив, в 1 массиве удаляем и делаем это снова
-			int index;
-			int lenpr = len2;//Копия длины массива, чтобы ее уменьшать
-			string min=arr[0].client;
-			Taxi* arr1 = new Taxi[1000];
-			for (int i = 0; i < len2; i++) {
-				for (int j = 1; j < lenpr; j++) {
-					/*qsort(arr, len2, sizeof(Taxi*), comparator);*/// Не работает
-					if (comparator(min, arr[j].driver) > 0) {
-						min = arr[j].driver;
-						index = j;
-					}
-				}
-				arr1[i].client = arr[index].client;
-				arr1[i].where_from = arr[index].where_from;
-				arr1[i].where = arr[index].where;
-				arr1[i].driver = arr[index].driver;
-				arr1[i].colour = arr[index].colour;
-				arr1[i].marka = arr[index].marka;
-				arr1[i].registration_mark = arr[index].registration_mark;
-				arr1[i].distance = arr[index].distance;
-				arr1[i].price = arr[index].price;
-				lenpr=del(arr, lenpr, index);
-			}
-			cout << "Отсортированный массив:" << endl;
-			printmas(arr1, len2);
-			
-			break;
 		}
-
 		if (v == 0)
 		{
 			delete[] arr;
 			delete[] a;
 			break;
 		}
-	}
-}
+		
+}   }
+	
